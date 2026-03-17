@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>F1 Legends & Speed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">F1 Legends</div>
+  <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+  <ul class="menu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="verstappen.html">Verstappen</a></li>
+    <li><a href="circuitos.html">Circuitos</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <h1>F1 Legends & Speed</h1>
+  <p>Historia, tecnología y pilotos que hicieron leyenda en la Fórmula 1</p>
+</header>
+
+<section class="slider">
+  <div class="slides">
+    <img src="https://cdn.pixabay.com/photo/2016/03/26/22/32/fast-1281628_1280.jpg" class="active" alt="F1">
+    <img src="https://cdn.pixabay.com/photo/2018/02/27/07/45/street-3184900_1280.jpg" alt="F1 car">
+    <img src="https://cdn.pixabay.com/photo/2015/09/25/15/46/ferrari-957630_1280.jpg" alt="Race track">
+  </div>
+  <button class="prev">‹</button>
+  <button class="next">›</button>
+</section>
+
+<main class="grid-layout">
+  <section id="historia" class="card big lift">
+    <h2>Historia de la Fórmula 1</h2>
+    <p>Desde 1950, la F1 es la cima del automovilismo mundial. Evolución constante, innovación y competencia al límite.</p>
+  </section>
+
+  <article id="tech" class="card lift">
+    <h3>Tecnología</h3>
+    <p>Híbridos, aerodinámica avanzada, telemetría en tiempo real y materiales compuestos.</p>
+  </article>
+
+  <article class="card lift">
+    <h3>Circuitos Icónicos</h3>
+    <p>Mónaco, Spa, Monza y Suzuka exigen precisión y valentía.</p>
+  </article>
+
+  <aside class="card highlight lift">
+    <h3>Dato Curioso</h3>
+    <p>Un F1 genera suficiente carga para ir “boca abajo”.</p>
+  </aside>
+</main>
+
+<section id="video" class="video-section">
+  <h2>Inside Formula 1</h2>
+  <div class="video-wrapper">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="videos/Video_F1.mp4" type="video/mp4">
+  </video>
+</div>
+</section>
+
+<footer>
+  <p>Proyecto académico – Diseño Web moderno | 2026</p>
+</footer>
+
+<script src="js/slider.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>

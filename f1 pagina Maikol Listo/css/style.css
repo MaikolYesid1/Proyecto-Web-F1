@@ -1,0 +1,382 @@
+:root {
+  --primary-color: #e10600;
+  --secondary-color: #111;
+  --accent-color: #ffffff;
+  --bg-color: #f4f4f4;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(135deg, #f4f4f4, #e10600);
+  color: #111;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  z-index: 1000;
+}
+
+.logo { font-weight: 900; }
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.menu a { color: #fff; text-decoration: none; font-weight: 600; }
+.menu a:hover { color: var(--primary-color); }
+
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #000;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+  }
+  .menu.open { display: flex; }
+}
+
+.hero {
+  min-height: auto !important;
+  height: auto!important;
+  display: block;
+  padding: 1.5rem 1rem;
+  background:
+    linear-gradient(135deg, rgba(0,0,0,.9), rgba(225,6,0,.35)),
+    url("https://images.unsplash.com/flagged/photo-1550473758-1f3a50f30ec5");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+
+
+.hero {
+  clip-path: none;   /* elimina la cuña blanca grande */
+}
+
+.hero.alt {
+  min-height: 40vh;
+  background:
+    linear-gradient(120deg, rgba(0,0,0,.8), rgba(225,6,0,.45)),
+    url("https://images.unsplash.com/photo-1542327897-37c6ed5b1f64");
+  background-size: cover;
+  background-position: center;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  height: 320px;
+}
+
+.slides img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: none;
+}
+
+.slides img.active { display: block; }
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,.6);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+@media (max-width: 900px) {
+  .grid-layout { grid-template-columns: repeat(2, 1fr); }
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  grid-column: span 2;
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card.big { grid-column: span 4; }
+
+.card.highlight {
+  background: var(--primary-color);
+  color: white;
+}
+
+.lift:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,.2);
+}
+
+.video-section {
+  padding: 2rem;
+  background: #000;
+  color: #fff;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.hero-video {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+.verstappen-hero {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+
+.verstappen-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.verstappen-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,.8));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+footer {
+  background: var(--secondary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+
+/* ===== Circuitos ===== */
+.circuito {
+  cursor: pointer;
+  overflow: hidden;
+  animation: fadeUp .6s ease both;
+}
+
+.circuito img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: .7rem;
+}
+
+.circuito .extra {
+  font-size: .85rem;
+  color: #444;
+  margin-top: .5rem;
+  opacity: 0;
+  max-height: 0;
+  transition: all .3s ease;
+}
+
+.circuito.active .extra {
+  opacity: 1;
+  max-height: 80px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: 1px;
+  margin-bottom: .5rem;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1rem;
+  opacity: .9;
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 22vh;
+    padding: 1.2rem .8rem;
+  }
+
+  .hero p {
+    display: none;  /* opcional: quita el subtítulo en móvil */
+  }
+}
+
+/* header Verstappen */
+.verstappen-hero-header {
+  min-height: auto !important;   /* quita el bloque gigante */
+  height: auto !important;       /* se ajusta al texto */
+  padding: 1.5rem 1rem;          /* compacto */
+  clip-path: none;               /* quita cortes raros */
+  display: block;                /* evita centrados raros */
+}
+
+
+
+/* ---------------------------*/
+/* Base: móvil */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  .grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-layout {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.card {
+  grid-column: span 1;
+}
+
+@media (min-width: 1024px) {
+  .card { grid-column: span 2; }
+  .card.big { grid-column: span 4; }
+}
+
+.hero h1 {
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+}
+
+.card h2, .card h3 {
+  font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+}
+
+body {
+  font-size: clamp(0.95rem, 2.5vw, 1rem);
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+
+.slider,
+.slides img {
+  height: 220px;
+}
+
+@media (min-width: 768px) {
+  .slider,
+  .slides img {
+    height: 320px;
+  }
+}
+@media (max-width: 768px) {
+  .menu {
+    width: 100%;
+    right: 0;
+    left: 0;
+    text-align: center;
+  }
+
+  .menu a {
+    padding: 0.8rem 0;
+    display: block;
+    font-size: 1.1rem;
+  }
+}
+.grid-layout {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.card {
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+.hero {
+  min-height: auto;
+  height: auto;
+}
+
+.verstappen-hero {
+  height: clamp(200px, 40vw, 320px);
+}
+
+@media (max-width: 480px) { }
+
+@media (min-width: 600px) { }
+
+@media (min-width: 768px) { }
+
+@media (min-width: 1024px) { }
+

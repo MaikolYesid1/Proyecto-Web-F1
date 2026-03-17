@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Circuitos Legendarios – F1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">F1 Legends</div>
+  <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+  <ul class="menu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="verstappen.html">Verstappen</a></li>
+    <li><a href="circuitos.html" class="active">Circuitos</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <h1>Circuitos Legendarios</h1>
+  <p>Pistas que marcaron la historia de la F1</p>
+</header>
+
+<main class="grid-layout circuitos">
+
+  <article class="card lift circuito" onclick="toggleInfo(this)">
+    <img src="https://cms-images.acc.indazn.com/di/library/DAZN_News/70/14/c79nbs8ayvi41703gx79axz35imagehero16x9_c79nbs8ayvi41703gx79axz35_IMAGE_HERO_16x9.jpg?t=-95081066&quality=85&w=430" alt="Circuito de Mónaco">
+    <h3>Mónaco</h3>
+    <p class="desc">Calles estrechas, máxima precisión.</p>
+    <p class="extra">📍 Montecarlo · 3.337 km · Curva Fairmont</p>
+  </article>
+
+  <article class="card lift circuito" onclick="toggleInfo(this)">
+    <img src="https://cms-images.acc.indazn.com/di/library/DAZN_News/b5/9e/gran-premio-de-belgica-spa-francorchamps-formula-1-f1_1wh6v1q26kqe414b1jthachqha.jpg?t=-971001678&quality=85&w=430">
+    <h3>Spa-Francorchamps</h3>
+    <p class="desc">Velocidad y cambios de elevación.</p>
+    <p class="extra">📍 Bélgica · Eau Rouge · 7.004 km</p>
+  </article>
+
+  <article class="card lift circuito" onclick="toggleInfo(this)">
+    <img src="https://e01-phantom-marca-mx.uecdn.es/5d756caa40397328452f479a780ba40a/resize/828/f/webp/mx/assets/multimedia/imagenes/2025/09/02/17568256210182.jpg" alt="Circuito de Monza">
+    <h3>Monza</h3>
+    <p class="desc">El templo de la velocidad.</p>
+    <p class="extra">📍 Italia · Rettifilo · 5.793 km</p>
+  </article>
+
+  <article class="card lift circuito" onclick="toggleInfo(this)">
+    <img src="https://cms-images.acc.indazn.com/di/library/DAZN_News/aa/27/suzuka-circuit-f1_19jvo7y82l4sk1nvcids4mfv5d.jpg?t=-1548012717&quality=85&w=430" alt="Circuito de Suzuka">
+    <h3>Suzuka</h3>
+    <p class="desc">Curvas técnicas en forma de “8”.</p>
+    <p class="extra">📍 Japón · 130R · 5.807 km</p>
+  </article>
+
+</main>
+<footer>
+  <p>F1 Legends & Speed</p>
+</footer>
+
+<script src="js/menu.js"></script>
+</body>
+</html>
